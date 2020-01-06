@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import { render } from "react-dom";
+import Inbox from "./Inbox.js";
+import catalogCs from "./locales/cs/messages.js";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { I18nProvider } from "@lingui/react";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const catalogs = { cs: catalogCs };
+
+const App = () => (
+  <I18nProvider language="cs" catalogs={catalogs}>
+    <Inbox />
+  </I18nProvider>
+);
+
+render(<App />, document.getElementById("root"));

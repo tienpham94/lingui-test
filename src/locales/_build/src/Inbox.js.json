@@ -1,0 +1,18 @@
+{
+  "Message Inbox": {
+    "origin": [
+      [
+        "src/Inbox.js",
+        16
+      ]
+    ]
+  },
+  "See all <0>unread messages</0>or <1>mark them</1> as read.": {
+    "origin": [
+      [
+        "src/Inbox.js",
+        20
+      ]
+    ]
+  }
+}
