@@ -1,6 +1,6 @@
 // Inbox.js
 import React from "react";
-import { Trans } from "@lingui/macro";
+import { Trans, Plural } from "@lingui/macro";
 
 const Inbox = ({
   messages = ["a", "b"],
@@ -25,9 +25,12 @@ const Inbox = ({
       </p>
 
       <p>
-        {messagesCount === 1
-          ? "There's {messagesCount} message in your inbox."
-          : "There're {messagesCount} messages in your inbox."}
+        <Plural
+          value={messagesCount}
+          zero="There're no messages"
+          one="There's # message in your inbox"
+          other="There're # messages in your inbox"
+        />
       </p>
 
       <footer>Last login on {lastLogin}.</footer>
