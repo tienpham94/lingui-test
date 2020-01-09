@@ -1,6 +1,6 @@
 // Inbox.js
 import React from "react";
-import { Trans, Plural } from "@lingui/macro";
+import { Trans, Plural, DateFormat } from "@lingui/macro";
 
 const Inbox = ({
   messages = ["a", "b"],
@@ -33,7 +33,11 @@ const Inbox = ({
         />
       </p>
 
-      <footer>Last login on {lastLogin}.</footer>
+      <footer>
+        <Trans>
+          Last login on <DateFormat value={lastLogin} />.
+        </Trans>
+      </footer>
     </div>
   );
 };
